@@ -33,10 +33,11 @@ defmodule Tzdata.EtsHolder do
     |> :ets.delete
   end
   defp delete_ets_file_for_version(release_version) do
-    Logger.debug "Tzdata deleting ETS table file for version #{release_version}"
-    release_version
-    |> DataBuilder.ets_file_name_for_release_version
-    |> File.rm
+    Logger.debug "Stopping Tzdata deleting ETS table file for version #{release_version}"
+    # Logger.debug "Tzdata deleting ETS table file for version #{release_version}"
+    # release_version
+    # |> DataBuilder.ets_file_name_for_release_version
+    # |> File.rm
   end
 
   defp load_release do
